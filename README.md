@@ -2,8 +2,17 @@
 A Package which allows you to Fetch Funny Gif's and Memes
 
 # Installation
+
+## NPM
+
 ```bash
 npm install gif-meme-fetcher
+```
+
+## YARN
+
+```bash
+yarn add gif-meme-fetcher
 ```
 
 # Usage
