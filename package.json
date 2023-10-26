@@ -1,23 +1,22 @@
 {
   "name": "gif-meme-fetcher",
-  "version": "1.0.3",
-  "description": "A NPM Package to Fetch all the Memes and Hard Work for You",
+  "version": "2.0.0",
+  "description": "A Package which allows you to Fetch Funny Gif's and Memes",
   "main": "index.js",
-  "dependencies": {
-    "gif-meme-fetcher": "^1.0.0",
-    "node-fetch": "^3.2.3"
-  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/shadowgamerfromyt/gif-meme-fetcher.git"
+    "url": "git+https://github.com/shadowcool/gif-meme-fetcher.git"
   },
-  "author": "ShadoW Cool",
+  "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/shadowgamerfromyt/gif-meme-fetcher/issues"
+    "url": "https://github.com/shadowcool/gif-meme-fetcher/issues"
   },
-  "homepage": "https://github.com/shadowgamerfromyt/gif-meme-fetcher#readme"
+  "homepage": "https://github.com/shadowcool/gif-meme-fetcher#readme",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
 }
