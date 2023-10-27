@@ -1,15 +1,22 @@
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 /**
- * @typedef {Object} Meme
+ * @typedef {Object} MemeOptions
  * @property {String} type
  * @property {Number} limit
  */
 
 /**
- * 
- * @param {Meme} memeOptions
- * @returns {Array}
+ * @typedef {Array} Meme
+ * @property {String} title
+ * @property {String} author
+ * @property {String} url
+ * @property {String} type
+ */
+
+/** 
+ * @param {MemeOptions} memeOptions
+ * @returns {Promise<Meme>}
  */
 
 const Meme = async(memeOptions) => {

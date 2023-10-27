@@ -1,15 +1,24 @@
 const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fetch(...args));
 
 /**
- * @typedef {Object} Gif
+ * @typedef {Object} GifOptions
  * @property {Number} limit
  * @property {String} query
  */
 
 /**
- * 
- * @param {Gif} gifOptions
- * @returns {Array}
+ * @typedef {Array} Gif
+ * @property {String} title
+ * @property {String} url
+ * @property {Number} id
+ * @property {Array} media
+ * @property {String} itemurl
+ * @property {Array} tags
+ */
+
+/** 
+ * @param {GifOptions} gifOptions
+ * @returns {Promise<Gif>}
  */
 
 const Gif = async(gifOptions) => {
