@@ -21,8 +21,8 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 
 const Meme = async(memeOptions) => {
 
-    const type = memeOptions.type.toLowerCase();
-    const limit = memeOptions.limit;
+    let type = memeOptions.type;
+    let limit = memeOptions.limit;
 
     if(!limit || !memeOptions) throw new Error("Invalid Meme Options: TYPE and LIMIT are required options")
 
@@ -38,6 +38,8 @@ const Meme = async(memeOptions) => {
     } 
 
     if(!type) type = "normal"
+
+    type = type.toLowerCase()
 
     if(limit > 100) throw new Error("Limit cannot be greater than 100")
 

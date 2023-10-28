@@ -18,7 +18,12 @@ class GMF {
 
         this.Meme = Meme;
 
-        global.tenorApiKey = options.tenorApiKey || null;
+        if(!options || !global.tenorApiKey) {
+            global.tenorApiKey = null;
+            return;
+        }
+
+        global.tenorApiKey = options.tenorApiKey;
 
     }
 
