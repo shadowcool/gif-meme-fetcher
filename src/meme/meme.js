@@ -2,7 +2,6 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 
 /**
  * @typedef {Object} MemeOptions
- * @property {String} type
  * @property {Number} limit
  */
 
@@ -11,7 +10,10 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
  * @property {String} title
  * @property {String} author
  * @property {String} url
- * @property {String} type
+ * @property {String} subreddit
+ * @property {Boolean} nsfw
+ * @property {Number} upvotes
+ * @property {Boolean} spoiler
  */
 
 /** 
@@ -21,29 +23,15 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 
 const Meme = async(memeOptions) => {
 
-    let type = memeOptions.type;
     let limit = memeOptions.limit;
 
     if(!limit || !memeOptions) throw new Error("Invalid Meme Options: TYPE and LIMIT are required options")
 
-    if(typeof type !== "string" || typeof limit !== "number" || typeof memeOptions !== "object") throw new Error("Invalid Meme Options: TYPE must be a string and LIMIT must be a number")
+    if(typeof limit !== "number" || typeof memeOptions !== "object") throw new Error("Invalid Meme Options: LIMIT must be a number")
 
-    const memeOptionsTypes = [
-        "dank",
-        "normal"
-    ]
+    if(limit > 50) throw new Error("Limit cannot be greater than 50")
 
-    if(type && !memeOptionsTypes.includes(type)) {
-        throw new Error("Invalid Meme Option Type: Types can only be DANK or NORMAL")
-    } 
-
-    if(!type) type = "normal"
-
-    type = type.toLowerCase()
-
-    if(limit > 100) throw new Error("Limit cannot be greater than 100")
-
-    const url = `https://meme.breakingbranches.tech/api?limit=${limit}&type=${type}`
+    const url = `https://meme-api.com/gimme/${limit}`
 
     const res = await fetch(url);
 
@@ -51,7 +39,7 @@ const Meme = async(memeOptions) => {
 
     let meme = [];
 
-    data.memes.forEach(m => meme.push({ title: m.title, author: m.author, url: m.url, type: type }) )
+    data.memes.forEach(m => meme.push({ title: m.title, author: m.author, url: m.url, subreddit: m.subreddit, nsfw: m.nsfw, upvotes: m.ups, spoiler: m.spoiler }) )
 
     return meme;
 }
