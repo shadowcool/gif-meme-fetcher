@@ -40,8 +40,6 @@ const Meme = async(memeOptions) => {
 
     let meme = [];
 
-    console.log(data.memes[0])
-
     data.memes.forEach(m => meme.push({ title: m.title, postLink: m.postLink, author: m.author, url: m.url, subreddit: m.subreddit, nsfw: m.nsfw, upvotes: m.ups, spoiler: m.spoiler }) )
 
     return meme;
