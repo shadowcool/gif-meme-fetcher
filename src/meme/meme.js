@@ -8,6 +8,7 @@ const fetch = (...args) => import('node-fetch').then(({ default: fetch }) => fet
 /**
  * @typedef {Array} Meme
  * @property {String} title
+ * @property {String} postLink
  * @property {String} author
  * @property {String} url
  * @property {String} subreddit
@@ -39,7 +40,9 @@ const Meme = async(memeOptions) => {
 
     let meme = [];
 
-    data.memes.forEach(m => meme.push({ title: m.title, author: m.author, url: m.url, subreddit: m.subreddit, nsfw: m.nsfw, upvotes: m.ups, spoiler: m.spoiler }) )
+    console.log(data.memes[0])
+
+    data.memes.forEach(m => meme.push({ title: m.title, postLink: m.postLink, author: m.author, url: m.url, subreddit: m.subreddit, nsfw: m.nsfw, upvotes: m.ups, spoiler: m.spoiler }) )
 
     return meme;
 }

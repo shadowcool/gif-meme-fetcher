@@ -2,7 +2,9 @@ const { GMF } = require('../index')
 
 // Initialize GMF Client
 
-const gmfClient = new GMF()
+const gmfClient = new GMF({
+    tenorApiKey: "YOUR_TENOR_API_KEY"
+})
 
 // Fetch GIF
 
