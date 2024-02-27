@@ -1,6 +1,6 @@
 {
   "name": "gif-meme-fetcher",
-  "version": "2.0.2",
+  "version": "2.1.0",
   "description": "A Package which allows you to Fetch Funny Gif's and Memes",
   "main": "index.js",
   "scripts": {
